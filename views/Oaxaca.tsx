@@ -4,11 +4,11 @@ import Tempo from '../components/Tempo';
 import Api from '../components/Api';
 
 
-export default function Itanhaem() {
+export default function Oaxaca() {
     const [dados, setDados] = useState<any[]>([]);
 
     async function buscaTempo(){
-        const response = await Api.get('weather?array_limit=7&fields=only_results,temp,city_name,forecast,max,min,date,weekday,condition,description,moon_phase&key=56966497&city_name=Itanhaem,SP');
+        const response = await Api.get('weather?array_limit=7&fields=only_results,temp,city_name,forecast,max,min,date,weekday,condition,description,moon_phase&key=56966497&city_name=Oaxaca,MX');
         setDados(response.data.forecast);
     }
     useEffect(
@@ -19,7 +19,7 @@ export default function Itanhaem() {
 
     return(
         <View style={style.bloco}>
-            <Text style={style.titulo}>Previsão do Tempo para Itanhaém</Text>
+            <Text style={style.titulo}>Previsão do Tempo para Oaxaca</Text>
         <Tempo dados={dados} />
         </View>
     );

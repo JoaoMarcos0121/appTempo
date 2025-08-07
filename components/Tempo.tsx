@@ -35,7 +35,7 @@ export default function Tempo({ dados }: Props) {
 
       {/* descrição da lua */}
       <Text style={styles.textoBase}>
-        Lua: {nomesLua[item.moon_phase] || item.moon_phase}
+        Fase: {nomesLua[item.moon_phase] || item.moon_phase}
       </Text>
 
       {/* ícones de condição e lua */}
@@ -45,6 +45,7 @@ export default function Tempo({ dados }: Props) {
       {moonIcons[item.moon_phase] && (
         <Image source={moonIcons[item.moon_phase]} style={styles.imagemLua} />
       )}
+
     </View>
   );
 
@@ -60,37 +61,40 @@ export default function Tempo({ dados }: Props) {
 
 const styles = StyleSheet.create({
   lista: {
+    flexGrow: 1,
     paddingBottom: 20,
+    paddingTop: 10,
     alignItems: 'center',
+    backgroundColor: '#f0f0f0',
   },
+
   card: {
     width: 350,
     backgroundColor: '#FFFFFF',
     borderRadius: 30,
     padding: 25,
     marginVertical: 12,
-    elevation: 6,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.2,
-    shadowRadius: 6,
+    marginHorizontal: 16,
     position: 'relative',
     justifyContent: 'center',
     borderWidth: 2,
-    borderColor: '#0487D9',
+    borderColor: '#3379b3ff',
   },
+
   titulo: {
-    fontSize: 20,
+    fontSize: 23,
     fontWeight: 'bold',
     marginBottom: 10,
     marginTop: 10,
-    color: '#333333',
+    color: '#8B0000',
   },
+  
   textoBase: {
     fontSize: 16,
-    color: '#555555',
+    color: '#3379b3ff',
     marginBottom: 10,
   },
+
   imagemCondicao: {
     width: 90,
     height: 90,
@@ -98,12 +102,12 @@ const styles = StyleSheet.create({
     bottom: 120,
     left: 230,
   },
+  
   imagemLua: {
     width: 70,
     height: 70,
     position: 'absolute',
-    bottom: 0,
+    bottom: 15,
     right: 35,
-    zIndex: 1,
   },
 });

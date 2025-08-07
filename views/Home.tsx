@@ -7,31 +7,58 @@ export default function Home() {
     const navigation = useNavigation();
     return(
         <View style={style.bloco}>
-            <Text style={style.Texto}> Seja Bem Vindo </Text>
+            {/* Titulo do Brasil */}
+            <Text style={style.Texto}> Cidades Brasileiras </Text>
 
+            {/* botao itanhaem */}
             <TouchableOpacity style={style.btn} onPress={()=>navigation.navigate('Itanhaem' as never)}>
-                <Text style={style.textoBtn}>Itanhaém</Text>
+                <Text style={style.textoBtn}>Itanhaém - <Text style={style.textoCidade}>Brasil</Text></Text>
             </TouchableOpacity>
+            {/* botao roraima */}
+            <TouchableOpacity style={style.btn} onPress={()=>navigation.navigate('Roraima' as never)}>
+                <Text style={style.textoBtn}>Roraima - <Text style={style.textoCidade}>Brasil</Text></Text>
+            </TouchableOpacity>
+
+            {/* Titulo do México */}
+            <Text style={style.Texto}> Cidades Mexicanas </Text>
+            {/* botao oaxaca */}
+            <TouchableOpacity style={style.btn} onPress={()=>navigation.navigate('Oaxaca' as never)}>
+                <Text style={style.textoBtn}>Oaxaca - <Text style={style.textoCidade}>México</Text></Text>
+            </TouchableOpacity>
+
+            <Text style={style.textoRodape}> @jmcosta01 </Text>
         </View>
+        
     )
 }
 
 const style = StyleSheet.create({
-    bloco:{
+bloco:{
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#F5F7FA',
     paddingHorizontal: 20,
 },
+
 Texto:{
     fontSize: 32,
     fontWeight: 'bold',
     color: '#333333',
+    marginTop: 20,
 },
-    btn: {
-    backgroundColor: '#4A90E2',
-    width: '50%',               
+
+textoRodape:{
+    fontSize: 15,
+    fontWeight: 'bold',
+    color: '#333333ff',
+    marginTop: 20,
+    alignContent: 'flex-end',
+},
+
+btn:{
+    backgroundColor: '#3379b3ff',
+    width: '70%',               
     paddingVertical: 18,       
     paddingHorizontal: 24,
     marginVertical: 16,        
@@ -42,12 +69,20 @@ Texto:{
     flexDirection: 'row',      
 },
 
-textoBtn: {
+textoBtn:{
     color: '#FFFFFF',
     fontSize: 18,              
     fontWeight: '600',         
     letterSpacing: 0.5,        
     textAlign: 'center',
     textTransform: 'uppercase' 
-}
+},
+
+textoCidade:{
+    fontSize: 16,
+    fontWeight: '400',
+    color: '#FFD700',
+    textTransform: 'none',
+    marginLeft: 8,
+},
 })
