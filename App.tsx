@@ -6,6 +6,7 @@ import Home from './views/Home';
 import Itanhaem from './views/Itanhaem';
 import Roraima from './views/Roraima';
 import Oaxaca from './views/Oaxaca';
+import Guerrero from './views/Guerrero';
 
 
 const MyStack = createNativeStackNavigator({
@@ -96,6 +97,31 @@ const MyStack = createNativeStackNavigator({
 
         // título do header
         title: 'Oaxaca',
+
+        // estilo do título do header
+        headerTitleStyle: {
+          fontWeight: 'bold',
+          fontSize: 24,
+        },
+
+        // alinhar o texo no centro
+        headerTitleAlign: 'center',
+      },
+    },
+    Guerrero: {
+      screen: Guerrero,
+      options: {
+
+        // cor do header
+        headerStyle: {
+          backgroundColor: '#3379b3ff',
+        },
+
+        // cor do texto do header
+        headerTintColor: '#FFD700',
+
+        // título do header
+        title: 'Guerrero',
 
         // estilo do título do header
         headerTitleStyle: {
